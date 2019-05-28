@@ -52,3 +52,7 @@ img {
 .page__article {
   margin-bottom: 50px;
 }
+
+.page__table {
+  margin: 30px 0;
+}
