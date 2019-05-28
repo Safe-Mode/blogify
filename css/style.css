@@ -8,16 +8,13 @@ img {
   text-align: right;
 }
 
-.logo {
-  text-align: center;
-}
-
 .logo__link {
   font-family: "Seymour One", sans-serif;
   font-size: 40px;
 }
 
-.user-area__link {
+.user-area {
+  text-align: right;
   font-size: 18px;
 }
 

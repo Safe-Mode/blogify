@@ -12,7 +12,7 @@
 <body class="page">
   <div class="page__container container">
     <header class="page__header row align-items-center justify-content-between">
-      <div class="logo">
+      <div class="logo col">
         <a href="../index.php" class="logo__link">Blogify</a>
       </div>
     </header>
