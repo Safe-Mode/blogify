@@ -40,8 +40,14 @@ img {
   font-family: "Neucha", cursive;
 }
 
+.page__container {
+  display: grid;
+  grid-template-rows: fit-content(100%) auto fit-content(100%);
+  grid-row-gap: 30px;
+  min-height: 100vh;
+}
+
 .page__header {
-  margin-bottom: 30px;
   padding: 30px 0;
 }
 
