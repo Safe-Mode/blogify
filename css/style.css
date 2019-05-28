@@ -8,13 +8,13 @@ img {
   text-align: right;
 }
 
+.logo {
+  text-align: center;
+}
+
 .logo__link {
-  display: block;
-  margin: 0;
-  
   font-family: "Seymour One", sans-serif;
   font-size: 40px;
-  text-align: center;
 }
 
 .article__title {
