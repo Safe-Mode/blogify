@@ -1,43 +1,31 @@
 <?php
-  function articles_all()
+  function articles_all($link)
   {
-    $art_1 = [
-      'id' => 1,
-      'image' => [
-        'src' => 'img/anaconda.jpg',
-        'alt' => 'Анаконда',
-      ],
-      'title' => 'Title 1',
-      'date' => '2019-05-28',
-      'content' => 'Content 1',
-    ];
+    $query = 'SELECT * FROM articles ORDER BY id DESC';
+    $result = mysqli_query($link, $query);
 
-    $art_2 = [
-      'id' => 2,
-      'image' => [
-        'src' => 'img/youngs.jpg',
-        'alt' => 'Молодые люди со смартфонами в Москве',
-      ],
-      'title' => 'Title 2',
-      'date' => '2019-05-28',
-      'content' => 'Content 2',
-    ];
+    if (!$result)
+      die(mysqli_error($link));
 
-    return [$art_1, $art_2];
+    $n = mysqli_num_rows($result);
+    $articles = [];
+
+    for ($i = 0; $i < $n; $i++) {
+      $articles[] = mysqli_fetch_assoc($result);
+    }
+
+    return $articles;
   }
 
-  function articles_get($id)
+  function articles_get($link, $id)
   {
-    return [
-      'id' => 1,
-      'image' => [
-        'src' => 'img/anaconda.jpg',
-        'alt' => 'Анаконда',
-      ],
-      'title' => 'Это простой заголовок',
-      'date' => '2019-01-01',
-      'content' => 'Здесь будет статья...',
-    ];
+    $query = sprintf("SELECT * FROM articles WHERE id=%d", $id);
+    $result = mysqli_query($link, $query);
+
+    if (!$result)
+      die(mysqli_error($link));
+
+    return mysqli_fetch_assoc($result);
   }
 
   function articles_new($title, $date, $content)
