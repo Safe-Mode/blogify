@@ -17,6 +17,10 @@ img {
   font-size: 40px;
 }
 
+.user-area__link {
+  font-size: 18px;
+}
+
 .article__title {
   font-family: "Pattaya", sans-serif;
   font-size: 30px;

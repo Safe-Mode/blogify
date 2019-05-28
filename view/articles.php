@@ -11,9 +11,13 @@
 </head>
 <body class="page">
   <div class="page__container container">
-    <header class="page__header">
+    <header class="page__header row align-items-center justify-content-between">
       <div class="logo">
         <a href="index.php" class="logo__link">Blogify</a>
+      </div>
+
+      <div class="page-header__user-area user-area">
+        <a href="admin/" class="user-area__link">Admin panel</a>
       </div>
     </header>
 
