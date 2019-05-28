@@ -5,9 +5,5 @@
   $link = db_connect();
   $articles = articles_all($link);
 
-  $a = articles_get($link, 1);
-
   include('view/articles.php');
 ?>
-
-<!-- <pre><?php print_r($articles); ?></pre> -->
