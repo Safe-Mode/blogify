@@ -39,7 +39,7 @@ img {
 
 .page__container {
   display: grid;
-  grid-template-rows: fit-content(100%) auto fit-content(100%);
+  grid-template-rows: fit-content(0) auto fit-content(0);
   grid-row-gap: 30px;
   min-height: 100vh;
 }
