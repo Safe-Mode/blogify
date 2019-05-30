@@ -26,9 +26,12 @@
 
     $article = articles_get($link, $id);
     include('../view/article_admin.php');
+  } else if ($action == 'delete') {
+    $id = $_GET['id'];
+    articles_delete($link, $id);
+    header('Location: index.php');
   } else {
     $articles = articles_all($link);
     include('../view/articles_admin.php');
   }
-  
 ?>
