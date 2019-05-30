@@ -40,7 +40,7 @@
                 <a href="index.php?action=edit&id=<?=$a['id']?>">Редактировать</a>
               </td>
               <td>
-                <a href="index.php?action=delete&id=<?=$a['id']?>">Удалить</a>
+                <a class="btn btn-danger" href="index.php?action=delete&id=<?=$a['id']?>">Удалить</a>
               </td>
             </tr>
             <?php endforeach ?>

@@ -59,3 +59,8 @@ img {
 .page__table {
   margin: 30px 0;
 }
+
+.page__table td,
+.page__table th {
+  vertical-align: middle;
+}
