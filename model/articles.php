@@ -89,4 +89,9 @@
 
     return mysqli_affected_rows($link);
   }
+
+  function articles_intro($text, $length = 500)
+  {
+    return (strlen($text) > $length) ? mb_substr($text, 0, $length) . '...' : $text;
+  }
 ?>

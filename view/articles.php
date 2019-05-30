@@ -32,7 +32,7 @@
           <p class="article__meta">Опубликовано: <time datetime="2019-05-27"><?=$a['date']?></time></p>
         </header>
 
-        <div class="article__body"><?=$a['content']?></div>
+        <div class="article__body"><?=articles_intro($a['content'])?></div>
       </article>
       <?php endforeach ?> 
     </main>
