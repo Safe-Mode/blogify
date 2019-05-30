@@ -22,20 +22,20 @@
     </header>
 
     <main class="page__body">
-      <form method="POST" action="index.php?action=add">
+      <form method="POST" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>">
         <div class="form-group">
           <label for="add-title">Заголовок</label>
-          <input type="text" class="form-control" id="add-title" name="title" placeholder="Заголовок статьи" required>
+          <input type="text" class="form-control" id="add-title" name="title" value="<?=$article['title']?>" placeholder="Заголовок статьи" required>
         </div>
 
         <div class="form-group">
           <label for="add-date">Дата</label>
-          <input type="date" class="form-control" id="add-date" name="date" placeholder="Дата публикации" required>
+          <input type="date" class="form-control" id="add-date" name="date" value="<?=$article['date']?>" placeholder="Дата публикации" required>
         </div>
 
         <div class="form-group">
           <label for="add-content">Контент</label>
-          <textarea class="form-control" id="add-content" rows="5" name="content" placeholder="Текст статьи" required></textarea>
+          <textarea class="form-control" id="add-content" rows="5" name="content" placeholder="Текст статьи" required><?=$article['content']?></textarea>
         </div>
 
         <button type="submit" class="btn btn-success">Сохранить</button>

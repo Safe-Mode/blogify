@@ -36,8 +36,8 @@
     if ($title == '')
       return false;
 
-    $t = "INSERT INTO articles (title, date, content) VALUES ('%s', '%s', '%s')";
-    $query = sprintf($t, 
+    $sql = "INSERT INTO articles (title, date, content) VALUES ('%s', '%s', '%s')";
+    $query = sprintf($sql, 
       mysqli_real_escape_string($link, $title),
       mysqli_real_escape_string($link, $date),
       mysqli_real_escape_string($link, $content));
@@ -50,9 +50,28 @@
     return true;
   }
 
-  function articles_edit($id, $title, $date, $content)
+  function articles_edit($link, $id, $title, $date, $content)
   {
+    $title = trim($title);
+    $date = trim($date);
+    $content = trim($content);
+    $id = (int) $id;
 
+    if ($title == '')
+      return false;
+
+    $sql = "UPDATE articles SET title='%s', date='%s', content='%s' WHERE id='%d'";
+    $query = sprintf($sql,
+      mysqli_real_escape_string($link, $title),
+      mysqli_real_escape_string($link, $date),
+      mysqli_real_escape_string($link, $content),
+      $id);
+    $result = mysqli_query($link, $query);
+
+    if (!$result)
+      die(mysqli_error($link));
+
+    return mysqli_affected_rows($link);
   }
 
   function articles_delete($id)
