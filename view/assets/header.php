@@ -9,16 +9,23 @@
   <link href="https://fonts.googleapis.com/css?family=Marck+Script|Neucha|Pattaya|Seymour+One&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body class="page">
   <div class="page__container container">
     <header class="page__header row align-items-center justify-content-between">
       <div class="logo col">
-        <a href="/index.php" class="logo__link">Blogify</a>
+        <?php if ($_SERVER['REQUEST_URI'] != '/index.php'): ?>
+          <a href="/index.php" class="logo__link">Blogify</a>
+        <?php else: ?>
+          <a class="logo__link">Blogify</a>
+        <?php endif; ?>
       </div>
 
-      <div class="page-header__user-area user-area col">
-        <a href="/admin/" class="user-area__link">Admin panel</a>
-      </div>
+      <?php if ($_SERVER['REQUEST_URI'] != '/admin/'): ?>
+        <div class="page-header__user-area user-area col">
+          <a href="/admin/" class="user-area__link">Admin panel</a>
+        </div>
+      <?php endif; ?>
     </header>
 
     <main class="page__body">
