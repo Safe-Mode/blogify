@@ -15,7 +15,7 @@
   <div class="page__container container">
     <header class="page__header row align-items-center justify-content-between">
       <div class="logo col">
-        <?php if ($_SERVER['REQUEST_URI'] != '/index.php') : ?>
+        <?php if ($_SERVER['REQUEST_URI'] != '/index.php' && $_SERVER['REQUEST_URI'] != '/') : ?>
           <a href="/index.php" class="logo__link">
             <?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/icons/pen.php'); ?>
             Blogify
