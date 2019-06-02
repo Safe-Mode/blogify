@@ -28,7 +28,7 @@
     return mysqli_fetch_assoc($result);
   }
 
-  function articles_new($link, $title, $date, $content)
+  function articles_new($link, $title, $date, $file, $content)
   {
     $title = trim($title);
     $content = trim($content);
@@ -36,11 +36,20 @@
     if ($title == '')
       return false;
 
-    $sql = "INSERT INTO articles (title, date, content) VALUES ('%s', '%s', '%s')";
-    $query = sprintf($sql, 
-      mysqli_real_escape_string($link, $title),
-      mysqli_real_escape_string($link, $date),
-      mysqli_real_escape_string($link, $content));
+    if ($file) {
+      $sql = "INSERT INTO articles (title, date, image, content) VALUES ('%s', '%s', '%s', '%s')";
+      $query = sprintf($sql, 
+        mysqli_real_escape_string($link, $title),
+        mysqli_real_escape_string($link, $date),
+        $file,
+        mysqli_real_escape_string($link, $content));
+    } else {
+      $sql = "INSERT INTO articles (title, date, content) VALUES ('%s', '%s', '%s')";
+      $query = sprintf($sql, 
+        mysqli_real_escape_string($link, $title),
+        mysqli_real_escape_string($link, $date),
+        mysqli_real_escape_string($link, $content));
+    }
 
     $result = mysqli_query($link, $query);
 
@@ -50,7 +59,7 @@
     return true;
   }
 
-  function articles_edit($link, $id, $title, $date, $content)
+  function articles_edit($link, $id, $title, $date, $file, $content)
   {
     $title = trim($title);
     $date = trim($date);
@@ -60,12 +69,23 @@
     if ($title == '')
       return false;
 
-    $sql = "UPDATE articles SET title='%s', date='%s', content='%s' WHERE id='%d'";
-    $query = sprintf($sql,
-      mysqli_real_escape_string($link, $title),
-      mysqli_real_escape_string($link, $date),
-      mysqli_real_escape_string($link, $content),
-      $id);
+    if ($file) {
+      $sql = "UPDATE articles SET title='%s', date='%s', image='%s', content='%s' WHERE id='%d'";
+      $query = sprintf($sql,
+        mysqli_real_escape_string($link, $title),
+        mysqli_real_escape_string($link, $date),
+        $file,
+        mysqli_real_escape_string($link, $content),
+        $id);
+    } else {
+      $sql = "UPDATE articles SET title='%s', date='%s', content='%s' WHERE id='%d'";
+      $query = sprintf($sql,
+        mysqli_real_escape_string($link, $title),
+        mysqli_real_escape_string($link, $date),
+        mysqli_real_escape_string($link, $content),
+        $id);
+    }
+
     $result = mysqli_query($link, $query);
 
     if (!$result)

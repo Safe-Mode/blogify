@@ -2,7 +2,7 @@
   require_once('assets/header.php');
 ?>
 
-<form method="POST" action="index.php?action=<?=$_GET['action']?>&id=<?=(isset($_GET['id'])) ? $_GET['id'] : ''?>">
+<form method="POST" enctype="multipart/form-data" action="index.php?action=<?=$_GET['action']?>&id=<?=(isset($_GET['id'])) ? $_GET['id'] : ''?>">
   <div class="form-group">
     <label for="add-title">Заголовок</label>
     <input type="text" class="form-control" id="add-title" name="title" value="<?=(isset($article)) ? $article['title'] : ''?>" placeholder="Заголовок статьи" required>
@@ -13,13 +13,10 @@
     <input type="date" class="form-control" id="add-date" name="date" value="<?=(isset($article)) ? $article['date'] : ''?>" placeholder="Дата публикации" required>
   </div>
 
-  <!-- <div class="form-group">
-    <label for="customFile">Изображение</label>
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="customFile">
-      <label class="custom-file-label" for="customFile">Choose file</label>
-    </div>
-  </div> -->
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Изображение</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="upload">
+  </div>
 
   <div class="form-group">
     <label for="add-content">Контент</label>

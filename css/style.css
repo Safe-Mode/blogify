@@ -29,8 +29,10 @@ img {
 }
 
 .article__image {
+  margin: 0 auto;
   margin-bottom: 30px;
   max-width: 600px;
+  max-height: 450px;
 }
 
 .page {
@@ -53,7 +55,7 @@ img {
 }
 
 .page__article {
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .page__table {
