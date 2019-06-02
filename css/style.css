@@ -9,8 +9,12 @@ img {
 }
 
 .logo__link {
-  font-family: "Seymour One", sans-serif;
+  font-family: "Plaster", sans-serif;
   font-size: 40px;
+}
+
+.logo__link:hover {
+  text-decoration: none;
 }
 
 .user-area {
@@ -42,7 +46,7 @@ img {
 .page__container {
   display: grid;
   grid-template-rows: fit-content(0) auto fit-content(0);
-  grid-row-gap: 30px;
+  grid-row-gap: 50px;
   min-height: 100vh;
 }
 
@@ -56,6 +60,10 @@ img {
 
 .page__article {
   margin-bottom: 100px;
+}
+
+.page__article:last-child {
+  margin-bottom: 0;
 }
 
 .page__table {
