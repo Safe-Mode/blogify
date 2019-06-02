@@ -1,3 +1,2 @@
 <?php
-echo $_SERVER['DOCUMENT_ROOT'].'/admin/.htpasswd';
-?>
+echo $_SERVER['DOCUMENT_ROOT'] . '/admin/.htpasswd';

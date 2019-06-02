@@ -1,5 +1,5 @@
 <?php
-  require_once('assets/header.php');
+require_once('assets/header.php');
 ?>
 
 <a href="index.php?action=add" class="btn btn-success">Добавить статью</a>
@@ -16,22 +16,22 @@
     </thead>
 
     <tbody>
-      <?php foreach($articles as $a): ?>
-      <tr>
-        <td><?=$a['date']?></td>
-        <td><?=$a['title']?></td>
-        <td>
-          <a href="index.php?action=edit&id=<?=$a['id']?>">Редактировать</a>
-        </td>
-        <td>
-          <a class="btn btn-danger" href="index.php?action=delete&id=<?=$a['id']?>">Удалить</a>
-        </td>
-      </tr>
+      <?php foreach ($articles as $a) : ?>
+        <tr>
+          <td><?= $a['date'] ?></td>
+          <td><?= $a['title'] ?></td>
+          <td>
+            <a href="index.php?action=edit&id=<?= $a['id'] ?>">Редактировать</a>
+          </td>
+          <td>
+            <a class="btn btn-danger" href="index.php?action=delete&id=<?= $a['id'] ?>">Удалить</a>
+          </td>
+        </tr>
       <?php endforeach ?>
     </tbody>
   </table>
 </div>
 
 <?php
-  require_once('assets/footer.php');
+require_once('assets/footer.php');
 ?>

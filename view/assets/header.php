@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,20 +15,20 @@
   <div class="page__container container">
     <header class="page__header row align-items-center justify-content-between">
       <div class="logo col">
-        <?php if ($_SERVER['REQUEST_URI'] != '/index.php'): ?>
+        <?php if ($_SERVER['REQUEST_URI'] != '/index.php') : ?>
           <a href="/index.php" class="logo__link">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/icons/pen.php');?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/icons/pen.php'); ?>
             Blogify
           </a>
-        <?php else: ?>
+        <?php else : ?>
           <a class="logo__link">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/icons/pen.php');?>
+            <?php include($_SERVER['DOCUMENT_ROOT'] . '/includes/icons/pen.php'); ?>
             Blogify
           </a>
         <?php endif; ?>
       </div>
 
-      <?php if ($_SERVER['REQUEST_URI'] != '/admin/'): ?>
+      <?php if ($_SERVER['REQUEST_URI'] != '/admin/') : ?>
         <div class="page-header__user-area user-area col">
           <a href="/admin/" class="user-area__link">Admin panel</a>
         </div>

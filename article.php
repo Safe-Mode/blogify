@@ -1,9 +1,8 @@
 <?php
-  require_once('db.php');
-  require_once('model/articles.php');
+require_once('db.php');
+require_once('model/articles.php');
 
-  $link = db_connect();
-  $article = articles_get($link, $_GET['id']);
+$link = db_connect();
+$article = articles_get($link, $_GET['id']);
 
-  include('view/article.php');
-?>
+include('view/article.php');
