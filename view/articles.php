@@ -5,7 +5,9 @@ require_once('assets/header.php');
 <?php foreach ($articles as $a) : ?>
   <article class="page__article article">
     <header class="article__header">
-      <img class="article__image" src="<?= $a['image'] ?>" alt="<?= $a['title'] ?>">
+      <?php if ($a['image']) : ?>
+        <img class="article__image" src="<?= $a['image'] ?>" alt="<?= $a['title'] ?>">
+      <?php endif; ?>
       <h3 class="article__title">
         <a href="article.php?id=<?= $a['id'] ?>"><?= $a['title'] ?></a>
       </h3>
