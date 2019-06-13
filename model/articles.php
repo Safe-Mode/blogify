@@ -32,7 +32,7 @@ function articles_get($link, $id)
 function articles_new($link, $title, $date, $file, $content)
 {
   $title = trim($title);
-  $content = trim($content);
+  $content = trim(nl2br($content));
 
   if ($title == '')
     return false;
@@ -68,7 +68,7 @@ function articles_edit($link, $id, $title, $date, $file, $content)
 {
   $title = trim($title);
   $date = trim($date);
-  $content = trim($content);
+  $content = trim(nl2br($content));
   $id = (int)$id;
 
   if ($title == '')
